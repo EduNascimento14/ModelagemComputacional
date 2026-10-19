@@ -1,0 +1,15 @@
+# PyTorch/torchvision: no Colab, preserve o par CUDA pré-instalado.
+# Local CPU: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+numpy>=2.0,<3
+pandas>=2.2,<4
+matplotlib>=3.8,<4
+scipy>=1.13,<2
+opencv-python-headless>=4.10,<6
+Pillow>=10,<13
+xarray>=2024.6
+netCDF4>=1.7,<2
+segment-anything==1.0
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+ipykernel>=6,<8
+ipywidgets>=8,<9

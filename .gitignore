@@ -1,0 +1,6 @@
+__pycache__/
+.ipynb_checkpoints/
+checkpoints/
+*.part
+resultados_revap.zip
+.venv/

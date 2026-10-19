@@ -1,0 +1,28 @@
+{
+  "arquivos": {
+    "dados/Proposta_REVAP_2019.pdf": {
+      "sha256": "df4ee41aa04fc4c7e30a733d0f43a1afe9256dea27ef40e4bc5f05ca3dafc8a1",
+      "bytes": 1030679
+    },
+    "dados/Vento_ERA5_REVAP_2019.nc": {
+      "sha256": "0f69306eb7397f8257caf9b5f4ba248288c0aec167e87f3524b07d8c0e05cc98",
+      "bytes": 40128
+    },
+    "dados/imagens/revap_01.jpg": {
+      "sha256": "a6faf8026649badfeffe12ff1d9e1c5375d209e04ae3477dee733292d464d73a",
+      "bytes": 56132
+    },
+    "dados/imagens/revap_02.jpg": {
+      "sha256": "bc98f4632621837a35e79de6aba1f8ab7aca22e21d7b7f434d3cd7f96c134a82",
+      "bytes": 70572
+    },
+    "dados/imagens/revap_03.jpg": {
+      "sha256": "a904d60faa0a5ecf9135efe6a9272cc6c431269a5a9977fa39699cf686821aba",
+      "bytes": 50518
+    },
+    "dados/prompts.json": {
+      "sha256": "f6e6e56f943796c197591fc1c1438a25211dca490e25a9b27b2a8bb17a73a3be",
+      "bytes": 27071
+    }
+  }
+}

@@ -1,0 +1,20 @@
+test_original_hashes_and_prompt_bounds (test_pluma.DeliveredOutputs.test_original_hashes_and_prompt_bounds) ... ok
+test_real_sam_export_integrity (test_pluma.DeliveredOutputs.test_real_sam_export_integrity) ... ok
+test_candidates_use_prompt_consistency (test_pluma.PromptsAndMetrics.test_candidates_use_prompt_consistency) ... ok
+test_cleanup_preserves_seeded_island_and_hole (test_pluma.PromptsAndMetrics.test_cleanup_preserves_seeded_island_and_hole) ... ok
+test_geometry_in_pixels (test_pluma.PromptsAndMetrics.test_geometry_in_pixels) ... ok
+test_invalid_prompt_rejected (test_pluma.PromptsAndMetrics.test_invalid_prompt_rejected) ... ok
+test_metrics_known_confusion (test_pluma.PromptsAndMetrics.test_metrics_known_confusion) ... ok
+test_normalized_coordinates_non_square (test_pluma.PromptsAndMetrics.test_normalized_coordinates_non_square) ... ok
+test_cardinal_conventions_and_calm (test_pluma.WindAndPhysics.test_cardinal_conventions_and_calm) ... ok
+test_exact_integral_constant_wind (test_pluma.WindAndPhysics.test_exact_integral_constant_wind) ... ok
+test_exact_integral_linear_wind (test_pluma.WindAndPhysics.test_exact_integral_linear_wind) ... ok
+test_gaussian_mass_symmetry_and_diffusion (test_pluma.WindAndPhysics.test_gaussian_mass_symmetry_and_diffusion) ... ok
+test_no_extrapolation (test_pluma.WindAndPhysics.test_no_extrapolation) ... ok
+test_received_era5_all_times_preserved (test_pluma.WindAndPhysics.test_received_era5_all_times_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.371s
+
+OK
+ERA5: {'time': 8, 'latitude': 5, 'longitude': 5}; grade mais próxima: -23.250, -45.750

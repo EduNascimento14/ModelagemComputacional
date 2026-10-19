@@ -1,0 +1,85 @@
+{
+  "executor": "IPython InteractiveShell em processo local (sem sockets de kernel)",
+  "celulas_codigo_executadas": 15,
+  "erros": 0,
+  "duracao_s": 43.68688892,
+  "celulas": [
+    {
+      "celula": 3,
+      "execution_count": 1,
+      "erro": false
+    },
+    {
+      "celula": 4,
+      "execution_count": 2,
+      "erro": false
+    },
+    {
+      "celula": 5,
+      "execution_count": 3,
+      "erro": false
+    },
+    {
+      "celula": 7,
+      "execution_count": 4,
+      "erro": false
+    },
+    {
+      "celula": 9,
+      "execution_count": 5,
+      "erro": false
+    },
+    {
+      "celula": 10,
+      "execution_count": 6,
+      "erro": false
+    },
+    {
+      "celula": 12,
+      "execution_count": 7,
+      "erro": false
+    },
+    {
+      "celula": 14,
+      "execution_count": 8,
+      "erro": false
+    },
+    {
+      "celula": 15,
+      "execution_count": 9,
+      "erro": false
+    },
+    {
+      "celula": 17,
+      "execution_count": 10,
+      "erro": false
+    },
+    {
+      "celula": 18,
+      "execution_count": 11,
+      "erro": false
+    },
+    {
+      "celula": 20,
+      "execution_count": 12,
+      "erro": false
+    },
+    {
+      "celula": 21,
+      "execution_count": 13,
+      "erro": false
+    },
+    {
+      "celula": 23,
+      "execution_count": 14,
+      "erro": false
+    },
+    {
+      "celula": 24,
+      "execution_count": 15,
+      "erro": false
+    }
+  ],
+  "figuras_embutidas": 9,
+  "nota_apresentacao": "Figuras embutidas convertidas para JPEG para tornar o notebook leve; máscaras binárias e figuras exportadas permanecem em PNG."
+}

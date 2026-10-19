@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "opencv": "5.0.0",
+  "pandas": "2.2.3",
+  "xarray": "2026.9.0",
+  "torch": "2.14.1+cpu",
+  "cuda_disponivel": false,
+  "sam_checkpoint_sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912"
+}

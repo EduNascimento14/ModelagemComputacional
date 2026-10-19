@@ -1,0 +1,12 @@
+{
+  "inicio_utc": "2019-09-29T18:15:00Z",
+  "fim_utc": "2019-09-30T01:00:00Z",
+  "K_hipotetico_m2_s": 20.0,
+  "q_unidades_tracador_s": 1.0,
+  "sigma0_hipotetico_m": 100.0,
+  "massa_emitida_unidades": 24300.0,
+  "massa_integrada_unidades": 24302.272598543273,
+  "erro_relativo_massa": 9.352257379726291e-05,
+  "diferenca_relativa_dt120_dt60": 0.00011604778447982117,
+  "nota": "Cenário didático; sem calibração, ascensão térmica, deposição ou validação fotográfica."
+}
