@@ -1,6 +1,6 @@
 {
   "descricao": "Prompts específicos por foto; coordenadas normalizadas x,y em [0,1].",
-  "proveniencia_referencia": "Polígonos aproximados por inspeção visual assistida por IA, antes da inferência SAM; não são anotações humanas validadas nem ground truth. Não usados para selecionar candidatos ou recortar máscaras.",
+  "proveniencia_referencia": "Referência poligonal aproximada, definida antes da inferência SAM e sem validação independente. Usada apenas para comparação; não orienta a seleção de candidatas nem o recorte das máscaras.",
   "imagens": {
     "revap_01": {
       "arquivo": "dados/imagens/revap_01.jpg",

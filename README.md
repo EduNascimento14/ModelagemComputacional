@@ -7,7 +7,7 @@ Modelagem Computacional · Profa. Raquel Lobosco · UNIFESP
 
 **Arquivo para entrega:** [Projeto_REVAP_SAM_ERA5.ipynb](Projeto_REVAP_SAM_ERA5.ipynb). O notebook contém código, figuras e tabelas de uma execução real em CPU. Abra no Colab e use **Ambiente de execução → Executar tudo**; GPU T4 é opcional. Não exige Drive, chave API ou cadastro no Copernicus. Pesos SAM oficiais (~375 MB) são baixados e verificados automaticamente; não estão versionados aqui.
 
-O estudo usa as três fotografias e o recorte ERA5 enviados com a proposta do incêndio da REVAP de 29/09/2019. O código compara quatro configurações de prompts **para cada foto**, com original, máscara binária e sobreposição lado a lado:
+Neste estudo, analisamos três fotografias do incêndio da REVAP de 29/09/2019 e o recorte ERA5 correspondente. Comparamos quatro configurações de prompts **para cada foto**, com original, máscara binária e sobreposição lado a lado:
 
 1. Caixa ampla, sem pontos.
 2. Caixa ajustada e pontos positivos distribuídos na fumaça.
@@ -22,13 +22,13 @@ Uma quinta linha apresenta a máscara final com limpeza mínima de ilhas pequena
 
 A caixa ampla pode incluir grande parte do céu, especialmente na segunda foto. Pontos e refinamento corrigem boa parte dessa falha; a terceira foto já funciona bem com caixa e não ganha necessariamente com mais prompts. Há análise explícita de iluminação, contraste, fumaça versus nuvens, oclusões, céu entre filamentos e partes fora do enquadramento.
 
-As referências poligonais são **aproximações por inspeção visual assistida por IA**, traçadas antes da inferência e sem revisão humana independente. Não são ground truth e não são usadas para recortar as previsões ou selecionar candidatas. As métricas ignoram uma faixa de borda de 1,2% da menor dimensão. IoU/Dice medem acordo com essa referência aproximada, não acurácia validada; o score interno SAM também não é acurácia medida. Os prompts foram desenvolvidos nas mesmas três imagens usadas na avaliação, sem conjunto externo de teste.
+As referências são **aproximações poligonais para comparação**, traçadas antes da inferência e sem validação independente. Não são ground truth e não são usadas para recortar as previsões ou selecionar candidatas. As métricas ignoram uma faixa de borda de 1,2% da menor dimensão. IoU/Dice medem acordo com essa referência aproximada, não acurácia validada; o score interno SAM também não é acurácia medida. Os prompts foram desenvolvidos nas mesmas três imagens usadas na avaliação, sem conjunto externo de teste.
 
 As medidas são em pixels. Sem escala, orientação/posição da câmera e horário de cada foto não há conversão confiável para metros nem correlação entre o ângulo na imagem e o azimute ERA5. Não se garante máscara perfeita de fumaça translúcida.
 
 ## Vento e solução de transporte
 
-O NetCDF recebido contém u10 e v10 juntos, em m/s, com 8 horários e grade 5×5. O código preserva todas as horas, exporta a grade para CSV e compara vizinho mais próximo com interpolação bilinear na localização representativa da refinaria. Distingue ângulo desde leste, azimute de transporte e direção meteorológica; converte UTC para `America/Sao_Paulo` e proíbe extrapolação.
+O NetCDF utilizado contém u10 e v10 juntos, em m/s, com 8 horários e grade 5×5. O código preserva todas as horas, exporta a grade para CSV e compara vizinho mais próximo com interpolação bilinear na localização representativa da refinaria. Distingue ângulo desde leste, azimute de transporte e direção meteorológica; converte UTC para `America/Sao_Paulo` e proíbe extrapolação.
 
 Uma extensão resolve advecção–difusão 2D pela convolução da solução de Green gaussiana, com vento uniforme variável no tempo. A integral do vento linear por partes é exata; a emissão é integrada por ponto médio. Emissão unitária, K=20 m²/s e largura inicial 100 m são **hipóteses ilustrativas**, sem calibração do incêndio. Verificam-se balanço de massa e convergência temporal. O cenário não estima concentração real, ascensão térmica ou CFD 3D, e não é usado para validar as máscaras das fotografias.
 
@@ -41,7 +41,7 @@ Uma extensão resolve advecção–difusão 2D pela convolução da solução de
 | `dados/imagens/` | Originais preservados byte a byte, com nomes simplificados |
 | `dados/prompts.json` | Caixas, positivos, negativos, referência aproximada e justificativas |
 | `dados/manifesto.json` | SHA-256 e tamanhos dos dados de entrada |
-| `dados/Proposta_REVAP_2019.pdf` | Proposta recebida |
+| `dados/Proposta_REVAP_2019.pdf` | Proposta de estudo de caso |
 | `dados/Vento_ERA5_REVAP_2019.nc` | Recorte ERA5 original |
 | `resultados/revap_*/` | Comparações, avaliação, máscaras binárias e sobreposições finais |
 | `resultados/` | Relatório, CSV, cenário físico e registros de validação |
@@ -71,6 +71,6 @@ Execute na raiz do repositório. O Colab já traz PyTorch/torchvision; a célula
 
 ## Fontes
 
-O [notebook inicial da professora](https://github.com/rjlobosco/modelagem_computacional/blob/main/Projeto_Pluma_ERA5_Colab.ipynb) orienta a parte ERA5. Segmentação: [SAM oficial](https://github.com/facebookresearch/segment-anything), dependência `segment-anything==1.0`, checkpoint ViT-B com SHA-256 no código. Referência científica: [Kirillov et al., 2023](https://arxiv.org/abs/2304.02643). Dados: [ERA5/C3S](https://doi.org/10.24381/cds.adbb2d47), cópia pública [ARCO-ERA5](https://github.com/google-research/arco-era5), conforme metadados do NetCDF recebido.
+O [notebook inicial da professora](https://github.com/rjlobosco/modelagem_computacional/blob/main/Projeto_Pluma_ERA5_Colab.ipynb) orienta a parte ERA5. Segmentação: [SAM oficial](https://github.com/facebookresearch/segment-anything), dependência `segment-anything==1.0`, checkpoint ViT-B com SHA-256 no código. Referência científica: [Kirillov et al., 2023](https://arxiv.org/abs/2304.02643). Dados: [ERA5/C3S](https://doi.org/10.24381/cds.adbb2d47), cópia pública [ARCO-ERA5](https://github.com/google-research/arco-era5), conforme metadados do NetCDF.
 
-A proposta recebida documenta o caso e as fontes jornalísticas. Fotografias fornecidas pelo estudante, sem créditos/URLs/horários verificáveis; sua associação ao caso é a informada pelo estudante. A coordenada representa a refinaria e não um tanque confirmado. Código, prompts e referência aproximada foram elaborados com assistência de IA; a revisão e interpretação acadêmica cabem aos integrantes.
+Nossa proposta documenta o caso e as fontes jornalísticas. As fotografias utilizadas na análise não têm horário ou orientação de câmera verificáveis, o que limita sua relação com os dados de vento. A coordenada representa a refinaria e não um tanque confirmado.

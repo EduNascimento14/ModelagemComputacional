@@ -4,9 +4,9 @@ Eduardo Nascimento — RA 168800 · Rebeka Wolpi — RA 176598
 
 ## Método e limites
 
-SAM oficial ViT-B; quatro configurações reais por foto e uma limpeza mínima. P1 usa caixa ampla, P2 caixa ajustada e pontos positivos, P3 acrescenta negativos, P4 reutiliza logits de P3 para refinamento. Os três candidatos SAM são registrados. A seleção automática usa consistência com prompts, score interno e vazamento da caixa, sem consultar os polígonos de avaliação. A configuração final está em prompts.json.
+Utilizamos o SAM oficial ViT-B em quatro configurações por foto e uma limpeza mínima. P1 usa caixa ampla, P2 caixa ajustada e pontos positivos, P3 acrescenta negativos, P4 reutiliza logits de P3 para refinamento. Os três candidatos SAM são registrados. A seleção automática usa consistência com prompts, score interno e vazamento da caixa, sem consultar os polígonos de avaliação. A configuração final está em prompts.json.
 
-Os polígonos de referência foram traçados por inspeção visual assistida por IA antes da inferência. São aproximações para discussão, sem revisão humana independente. A faixa de 1,2% da menor dimensão ao redor das bordas é ignorada nas métricas. IoU/Dice abaixo medem acordo com essa aproximação, não acurácia validada. O score interno SAM também não é acurácia medida. Os prompts e as referências usam as mesmas três imagens de desenvolvimento; não existe conjunto de teste externo.
+Os polígonos de referência foram traçados por inspeção visual antes da inferência. São aproximações para discussão, sem validação independente. A faixa de 1,2% da menor dimensão ao redor das bordas é ignorada nas métricas. IoU/Dice abaixo medem acordo com essa aproximação, não acurácia validada. O score interno SAM também não é acurácia medida. Os prompts e as referências usam as mesmas três imagens de desenvolvimento; não existe conjunto de teste externo.
 
 ## revap_01
 

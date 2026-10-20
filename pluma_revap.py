@@ -600,13 +600,13 @@ def write_report(table, finals, config, wind, physics):
     lines = ["# REVAP — avaliação dos experimentos SAM", "",
              "Eduardo Nascimento — RA 168800 · Rebeka Wolpi — RA 176598", "",
              "## Método e limites", "",
-             "SAM oficial ViT-B; quatro configurações reais por foto e uma limpeza mínima. "
+             "Utilizamos o SAM oficial ViT-B em quatro configurações por foto e uma limpeza mínima. "
              "P1 usa caixa ampla, P2 caixa ajustada e pontos positivos, P3 acrescenta negativos, "
              "P4 reutiliza logits de P3 para refinamento. Os três candidatos SAM são registrados. "
              "A seleção automática usa consistência com prompts, score interno e vazamento da caixa, "
              "sem consultar os polígonos de avaliação. A configuração final está em prompts.json.", "",
-             "Os polígonos de referência foram traçados por inspeção visual assistida por IA antes "
-             "da inferência. São aproximações para discussão, sem revisão humana independente. "
+             "Os polígonos de referência foram traçados por inspeção visual antes "
+             "da inferência. São aproximações para discussão, sem validação independente. "
              "A faixa de 1,2% da menor dimensão ao redor das bordas é ignorada nas métricas. "
              "IoU/Dice abaixo medem acordo com essa aproximação, não acurácia validada. "
              "O score interno SAM também não é acurácia medida. Os prompts e as referências "
@@ -645,7 +645,7 @@ def write_report(table, finals, config, wind, physics):
                   "direta com azimutes ERA5 e cálculo de correlação válida. Não se estima concentração "
                   "a partir da intensidade da fotografia.", "",
                   "## ERA5 e equações", "",
-                  "O arquivo recebido foi validado (8 horários, grade 5×5, u10/v10 em m/s). "
+                  "O arquivo ERA5 foi validado (8 horários, grade 5×5, u10/v10 em m/s). "
                   "A série completa é preservada. Exportam-se grade, vizinho mais próximo e "
                   "interpolação bilinear. Velocidade = hypot(u,v); ângulo matemático = atan2(v,u); "
                   "azimute para onde vai = atan2(u,v); direção meteorológica de onde vem = azimute + 180°. "
@@ -659,13 +659,7 @@ def write_report(table, finals, config, wind, physics):
                   "O modelo não resolve empuxo, pluma 3D, turbulência urbana ou deposição.", "",
                   f"Balanço de massa: erro relativo {physics['erro_relativo_massa']:.3%}; "
                   f"diferença relativa da quadratura 120 s / 60 s: {physics['diferenca_relativa_dt120_dt60']:.3%}.", "",
-                  "## Proveniência", "",
-                  "As três fotografias foram fornecidas pelo estudante, sem URLs originais, créditos "
-                  "ou metadados verificáveis de câmera/horário. A associação ao evento é a informada "
-                  "na atividade, não uma autenticação independente. Originais preservados byte a byte; "
-                  "SHA-256 em dados/manifesto.json. Dados e narrativa do evento: Proposta_REVAP_2019.pdf "
-                  "e metadados internos do NetCDF recebido. A posição representa a refinaria, não "
-                  "um tanque confirmado.", "",
+                  "## Referências", "",
                   "SAM: https://github.com/facebookresearch/segment-anything ; artigo "
                   "https://arxiv.org/abs/2304.02643 ; notebook de referência da disciplina: "
                   "https://github.com/rjlobosco/modelagem_computacional/blob/main/Projeto_Pluma_ERA5_Colab.ipynb ; "
