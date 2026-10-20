@@ -78,14 +78,8 @@ As medidas são em pixels. PCA fornece orientação de um eixo sem sentido (mód
 
 ## ERA5 e equações
 
-O arquivo recebido foi validado (8 horários, grade 5×5, u10/v10 em m/s). A série completa é preservada. Exportam-se grade, vizinho mais próximo e interpolação bilinear. Velocidade = hypot(u,v); ângulo matemático = atan2(v,u); azimute para onde vai = atan2(u,v); direção meteorológica de onde vem = azimute + 180°. Direção é indefinida em calmaria. A primeira amostra (15h) antecede as 15h15 e serve de suporte à interpolação; não há extrapolação após as 22h.
+O arquivo foi validado (8 horários, grade 5×5, u10/v10 em m/s). A série completa é preservada. Exportam-se grade, vizinho mais próximo e interpolação bilinear. Velocidade = hypot(u,v); ângulo matemático = atan2(v,u); azimute para onde vai = atan2(u,v); direção meteorológica de onde vem = azimute + 180°. Direção é indefinida em calmaria. A primeira amostra (15h) antecede as 15h15 e serve de suporte à interpolação; não há extrapolação após as 22h.
 
 O cenário adicional resolve advecção–difusão 2D com vento espacialmente uniforme e variável no tempo pela convolução da solução de Green gaussiana. A integral do vento linear por partes é exata; a emissão contínua usa quadratura de ponto médio com passo 60 s. K=20 m²/s e largura inicial 100 m são hipóteses ilustrativas, emissão = 1 unidade de traçador/s. Não representam parâmetros medidos do incêndio. O modelo não resolve empuxo, pluma 3D, turbulência urbana ou deposição.
 
 Balanço de massa: erro relativo 0.009%; diferença relativa da quadratura 120 s / 60 s: 0.012%.
-
-## Proveniência
-
-As três fotografias foram fornecidas pelo estudante, sem URLs originais, créditos ou metadados verificáveis de câmera/horário. A associação ao evento é a informada na atividade, não uma autenticação independente. Originais preservados byte a byte; SHA-256 em dados/manifesto.json. Dados e narrativa do evento: Proposta_REVAP_2019.pdf e metadados internos do NetCDF recebido. A posição representa a refinaria, não um tanque confirmado.
-
-SAM: https://github.com/facebookresearch/segment-anything ; artigo https://arxiv.org/abs/2304.02643 ; notebook de referência da disciplina: https://github.com/rjlobosco/modelagem_computacional/blob/main/Projeto_Pluma_ERA5_Colab.ipynb ; ERA5: https://doi.org/10.24381/cds.adbb2d47 .
